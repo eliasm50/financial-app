@@ -1,0 +1,55 @@
+.transactionlist-content {
+  padding: 0px;
+  margin: 2em;
+}
+.transactionlist-content h3 {
+  font-family: "Anton", sans-serif;
+  color: green;
+}
+.transactionlist-content a {
+  color: green;
+}
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
+.amountPaid {
+  font-weight: bold;
+}
+.mat-table {
+  border-radius: 10px;
+}
+.mat-icon-button {
+  width: auto;
+}
+.mat-table {
+  overflow: auto;
+}
+.mobile-label {
+  display: none;
+  padding: 0;
+}
+@media (max-width: 600px) {
+  .mobile-label {
+    width: 70px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0em;
+    color: green;
+  }
+  .mat-header-row {
+    display: none;
+  }
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+  mat-cell:first-of-type,
+  mat-footer-cell:first-of-type,
+  mat-header-cell:first-of-type {
+    padding-left: 2px;
+  }
+}

@@ -1,0 +1,26 @@
+<div *ngIf="customer" class="customer-detail">
+
+  <div class='customer-card'>
+    <div class="contact-heading">
+        <h2>{{customer.firstName | uppercase}} {{customer.lastName | uppercase}}</h2>
+        <img
+            src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
+            alt="avatar"
+            class="avatar-img"
+        />      
+    </div>
+    
+    <div class="customer-contact">
+        <p>Contact Details</p>
+      <div class="customer-phone">
+        <i class="fa fa-phone-square" aria-hidden="true"></i>
+        <span>{{customer.phone}}</span>
+      </div>
+      <div class="customer-phone">        
+        <i class="fa fa-envelope-square" aria-hidden="true"></i>       
+        <span>{{customer.email}}</span>        
+      </div>
+    </div>
+  </div>  
+
+</div>

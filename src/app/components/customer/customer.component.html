@@ -1,0 +1,58 @@
+<div class="customer-content">
+<h3>Customer List</h3>
+
+  <div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort [class.isMobile]="isMobile">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="customerId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"><span class="mobile-label">ID:</span>{{row.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="fullName">
+        <mat-header-cell *matHeaderCellDef > Name </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <span class="mobile-label">Name:</span>{{row.firstName}} {{row.lastName}}</mat-cell>
+      </ng-container>
+      
+      <!-- Progress Column -->
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Phone </mat-header-cell>
+        <mat-cell *matCellDef="let row"><span class="mobile-label">Phone:</span>{{row.phone}} </mat-cell>
+      </ng-container>
+      
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+          <mat-cell *matCellDef="let row"> <a href="mailto:{{ row.email }}" target="_blank">
+              <span class="mobile-label">Email:</span> 
+              {{row.email}}
+              </a>
+          </mat-cell>
+        </ng-container>
+        
+      <ng-container matColumnDef="options">
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <span class="mobile-label">Actions:</span> 
+            <div class="option-links">
+              <button mat-icon-button routerLink="/customers/{{row.id}}" matTooltip="View this customer">
+                <mat-icon>find_in_page</mat-icon>
+              </button>
+              <button mat-icon-button (click)="delete(row)" matTooltip="Remove this customer">
+                  <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            </mat-cell>
+      </ng-container>        
+        
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  </div>
+  
+</div>

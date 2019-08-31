@@ -1,0 +1,60 @@
+.customer-detail {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color:green;
+    margin-bottom: 20px;
+    background: #56ab2f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.customer-detail h2 {
+    font-family: 'Anton', sans-serif;    
+}
+
+.customer-detail p {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+}
+
+.customer-detail i {
+    font-size: 60px;     
+}
+
+.customer-detail span {
+    padding: 0.5em;         
+}
+
+.customer-card {
+    width: 55vh;
+    background: white;
+    border-radius: 10px;
+    margin-top: 2em;
+    padding-bottom: 1em;
+}
+
+.contact-heading {
+    text-align: center;
+    width: 100%;
+}
+
+.customer-contact {    
+    margin-left: auto;
+}
+
+.customer-contact p {
+    text-align: center;
+}
+
+.customer-phone {
+    font-size: 20px;
+    font-family: Anton;
+    padding: 0em;
+}
+
+.avatar-img {
+    height: 150px;
+    padding-top: 1em;     
+}

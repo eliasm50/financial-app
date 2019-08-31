@@ -1,0 +1,75 @@
+<div class="transactionlist-content">
+  <h3>Customer Transaction List</h3>
+
+  <div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort [class.isMobile]="isMobile">
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="transactionId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> 
+          <a routerLink="/transaction/{{row.transactionId}}">
+          <span class="badge"><span class="mobile-label">ID:</span>{{row.transactionId}}</span>
+        </a> 
+      </mat-cell>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="transactionType">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+        <mat-cell *matCellDef="let row"><span class="mobile-label">Type:</span>{{row.transactionType}} </mat-cell>
+      </ng-container>
+      
+      <!-- Customer ID Column -->
+      <ng-container matColumnDef="customerId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Customer </mat-header-cell>
+        <mat-cell *matCellDef="let row"> 
+            <a routerLink="/customers/{{row.customerId}}">
+              <span class="badge"><span class="mobile-label">Customer:</span>{{row.description}}</span>
+            </a>     
+        </mat-cell>
+      </ng-container>
+      
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"><span class="mobile-label">Date:</span>{{row.date}} </mat-cell>
+      </ng-container>
+      
+      <!-- Date Column -->
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let row" [ngClass]="{
+          'positive' : row.amount > 0,
+          'negative' : row.amount < 0
+       }"><span class="mobile-label">Amount:</span>{{row.amount  | currency}} </mat-cell>
+      </ng-container>
+      
+      <!-- taxAmount Column -->
+      <ng-container matColumnDef="taxAmount">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Tax Amount </mat-header-cell>
+        <mat-cell *matCellDef="let row"><span class="mobile-label">Tax Amount:</span>{{row.taxAmount | currency}} </mat-cell>
+      </ng-container>
+      
+      <!-- dueDate Column -->
+      <ng-container matColumnDef="dueDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"><span class="mobile-label">Due Date:</span>{{row.dueDate}}</mat-cell>
+      </ng-container>
+      
+      <!-- Amount Paid Column -->
+      <ng-container matColumnDef="amountPaid">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Amount Paid </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="amountPaid"><span class="mobile-label">Amount Paid:</span>{{row.amountPaid  | currency}} </mat-cell>
+      </ng-container>         
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+
+    
+  </div>
+</div>
+  
