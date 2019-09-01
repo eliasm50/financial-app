@@ -1,5 +1,4 @@
-$default-font-family: 'Anton', sans-serif;
-$default-font-color: green;
+@import "./../../../variables.scss";
 
 .customer-content {
     padding: 0px;
@@ -8,11 +7,11 @@ $default-font-color: green;
 
 .customer-content h3 {
     font-family: $default-font-family;
-    color: $default-font-color;
+    color: $main-color;
 }
 
 .customer-content a {
-    color: $default-font-color;
+    color: $main-color;
 }
 
 .option-links {
@@ -21,7 +20,7 @@ $default-font-color: green;
     align-items: center;
     margin:0;
     padding-left:2em;
-    color: $default-font-color;
+    color: $main-color;
 }
 
   .mat-icon-button {
@@ -44,7 +43,7 @@ $default-font-color: green;
       display: inline-block;
       font-weight: bold;
       padding: 0em;
-      color: $default-font-color;
+      color: $main-color;
     }
   
     .mat-header-row {

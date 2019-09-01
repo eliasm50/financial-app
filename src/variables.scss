@@ -1,0 +1,15 @@
+$default-font-family: 'Anton', sans-serif;
+$main-color: green;
+$second-color: white;
+
+
+
+$direction: 'to right';
+$color-left: #a8e063;
+$color-right:#56ab2f;
+
+@mixin main-background-gradient($direction, $color-left, $color-right) {
+background: $color-right;  /* fallback for old browsers */
+background: -webkit-linear-gradient($direction, $color-left, $color-right);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient($direction, $color-left, $color-right); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
