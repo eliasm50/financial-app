@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { TransactionService } from './../../services/transaction.service';
-import { Transaction } from 'src/app/models/transactions';
+import { Transaction } from './../../models/transactions';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -9,7 +9,8 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
   styleUrls: ['./transaction-list.component.scss']
 })
 export class TransactionListComponent implements OnInit {
-  displayedColumns = ['transactionId', 'transactionType', 'customerId', 'date', 'amount', 'taxAmount', 'dueDate', 'amountPaid'];
+  displayedColumns = ['transactionId', 'transactionType', 
+                      'customerId', 'date', 'amount', 'taxAmount', 'dueDate', 'amountPaid'];
   dataSource: MatTableDataSource<Transaction>;
   transactions: Transaction[] = [];
 
@@ -32,10 +33,6 @@ export class TransactionListComponent implements OnInit {
   getTransactions(): void {
     this.transactionService.getTransactions()
         .subscribe(transactions => transactions = transactions);
-  }
-
-  setDate(strDate) {
-    return new Date(strDate);
   }
 
 }

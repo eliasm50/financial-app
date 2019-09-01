@@ -9,8 +9,4 @@ export class Transaction {
     dueDate: Date;
     amountPaid: number;
 
-    // get description(customerName): string {
-    //    return this.transactionType + ' - ' + customerName + '(' + this.customerId + ')';
-    // }
-
 }

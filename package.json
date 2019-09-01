@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href https://eliasm50.github.io/financial-app/ && angular-cli-ghpages --branch gh-pages"
+    "deploy": "ng build --prod --base-href=/financial-app/ && ngh --dir=dist/financial-transactions-app"
   },
   "private": true,
   "dependencies": {

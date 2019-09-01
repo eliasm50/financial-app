@@ -19,7 +19,7 @@ export class CustomerService {
     private http: HttpClient,
     ) { }
 
-    /** GET customers from the server */
+  /** GET customers from the server */
   getCustomers(): Observable<Customer[]> {
        return this.http.get<Customer[]>(this.customersUrl)
        .pipe(
@@ -28,7 +28,7 @@ export class CustomerService {
        );
   }
 
-  /** GET hero by id. Will 404 if id not found */
+  /** GET customer by id. Will 404 if id not found */
   getCustomer(customerId: number): Observable<Customer> {
     const url = `${this.customersUrl}/${customerId}`;
     return this.http.get<Customer>(url).pipe(
@@ -36,14 +36,15 @@ export class CustomerService {
       catchError(this.handleError<Customer>(`getCustomer id=${customerId}`))
     );
   }
-
-   deleteCustomer(customer: Customer | number): Observable<Customer> {
+  
+  /** DELETE customer by id. Will log if not found */
+  deleteCustomer(customer: Customer | number): Observable<Customer> {
     const id = typeof customer === 'number' ? customer : customer.id;
     const url = `${this.customersUrl}/${id}`;
 
     return this.http.delete<Customer>(url, httpOptions).pipe(
       tap(_ => this.log(`deleted customer id=${id}`)),
-      catchError(this.handleError<Customer>('deleteCustomer'))
+      catchError(this.handleError<Customer>(`deleteCustomer id=${id}`))
     );
   }
 
@@ -63,7 +64,7 @@ export class CustomerService {
     };
   }
 
-  /** Log a HeroService message with the MessageService(TODO) */
+  /** Logging routing (TODO) */
   private log(message: string) {
     console.log(message);
   }

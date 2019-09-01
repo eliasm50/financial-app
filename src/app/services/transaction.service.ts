@@ -42,13 +42,14 @@ export class TransactionService {
        );
   }
 
+  /** DELETE transaction by id. Will log if not found */
   deleteTransaction(transaction: Transaction | number): Observable<Transaction> {
     const id = typeof transaction === 'number' ? transaction : transaction.transactionId;
     const url = `${this.transactionsUrl}/${id}`;
 
     return this.http.delete<Transaction>(url, httpOptions).pipe(
       tap(_ => this.log(`deleted transaction id=${id}`)),
-      catchError(this.handleError<Transaction>('deleteTransaction'))
+      catchError(this.handleError<Transaction>(`deleteTransaction id=${id}`))
     );
   }
 
