@@ -9,7 +9,7 @@ import { Transaction } from './models/transactions';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const customers = [
-      { id: 288066, firstName: 'Paul', lastName: 'Dylan', phone: '(123) 456-7890', email: 'dylanp@agilitycis.com' },
+      { id: 288066, firstName: 'Dylan', lastName: 'Paul' , phone: '(123) 456-7890', email: 'dylanp@agilitycis.com' },
       { id: 288065, firstName: 'David', lastName: 'Caird', phone: '(123) 456-7890', email: 'davidc@agilitycis.com' }
     ];
 

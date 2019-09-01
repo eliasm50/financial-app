@@ -60,5 +60,9 @@ $default-font-color: green;
     mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
          padding-left: 2px; 
     }
+
+    mat-footer-row::after, mat-header-row::after, mat-row::after {
+      min-height: 10px;
+    }    
 }
   
