@@ -1,4 +1,6 @@
-.example-container {
+@import "./../../../../variables.scss";
+
+  .example-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -6,12 +8,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    }
+  }
 
-.mat-toolbar.mat-primary {
-  background: #56ab2f;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  .mat-toolbar.mat-primary {
+    @include main-background-gradient($direction, $color-left, $color-right);
   }
 
   
@@ -21,18 +21,16 @@
     z-index: 2;
   }
   
-  h1.example-app-name {
-    margin-left: 8px;
-    font-family: 'Anton', sans-serif;
-  }
+    h1.example-app-name {
+      margin-left: 8px;
+      font-family: 'Anton', sans-serif;
+    }
   
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
-    background: #56ab2f;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    @include main-background-gradient($direction, $color-left, $color-right);
   }
   
   .example-is-mobile .example-sidenav-container {
@@ -52,9 +50,7 @@
   /* Navigation bar style */ 
   .mat-sidenav {
     width: 10em;
-    background: #56ab2f;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    @include main-background-gradient($direction, $color-left, $color-right);
     min-width: 200px;
   }
 
