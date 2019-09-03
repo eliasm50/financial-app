@@ -7,7 +7,8 @@
 }
 
 .landing-grid {
-    @include main-background-gradient($direction, $color-left, $color-right);
+    // @include main-background-gradient($direction, $color-left, $color-right);
+    background: white;
     text-align: center;
     position: relative;   
     top: 0;
@@ -22,7 +23,8 @@
 }
 
 .banner-text {    
-    background-color: black;
+    //background-color: $main-color;
+    @include main-background-gradient($direction, $color-left, $color-right);
     opacity: .8;
     width: 75%;
     margin: auto;
@@ -30,20 +32,24 @@
 }
 
 .banner-text h1 {
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: bold;
-    color: white;
+    color:$main-color;    
 }
 
 .banner-text hr {
-    border-top: 5px dotted white;
+    border: 5px dotted $main-color;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
     width: 50%;
     margin: auto;
+    height: 0;
 }
 
 .banner-text p {
-    color: white;
-    font-size: 20px;
+    color:$main-color;
+    font-size: 2vw;
     font-family: 'Anton', sans-serif; 
 }
 
