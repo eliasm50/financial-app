@@ -12,25 +12,29 @@
 
   .mat-toolbar.mat-primary {
     @include main-background-gradient($direction, $color-left, $color-right);
-  }
-
-  
+  } 
   .example-is-mobile .example-toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
   }
+
+  .mat-icon-button{
+    padding: 0px;
+    margin: 0px;
+  }
   
     h1.example-app-name {
       margin-left: 8px;
       font-family: 'Anton', sans-serif;
+      color: $main-color;
     }
   
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
-    @include main-background-gradient($direction, $color-left, $color-right);
+    background: white; // @include main-background-gradient($direction, $color-left, $color-right);
   }
   
   .example-is-mobile .example-sidenav-container {
@@ -50,10 +54,55 @@
   /* Navigation bar style */ 
   .mat-sidenav {
     width: 10em;
-    @include main-background-gradient($direction, $color-left, $color-right);
+    background: green; //@include main-background-gradient($direction, $color-left, $color-right);
     min-width: 200px;
+  }
+
+  .mat-icon-button {
+      padding: 0;
+      min-width: 0;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      line-height: 40px;
+      border-radius: 50%;
+      color: $main-color;
   }
 
   .icons{
     margin-right:10px;
+  }
+
+.navigation-items {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+}
+
+.example-fill-remaining-space {
+  // This fills the remaining space, by using flexbox. 
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+
+@media(max-width: 600px) {
+  .navigation-items {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    display: flex;
+    flex: 1 1 auto;
+  }
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    white-space: normal;
+    padding-left: 0px;
+  }
+
+  h1.example-app-name {
+    margin-left: 0px;
+    white-space: nowrap;
   }  
+}

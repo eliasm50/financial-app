@@ -1,7 +1,42 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
     <mat-toolbar color="primary" class="example-toolbar">
+      <mat-toolbar-row>
+
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">Financial Services</h1>
+      <span><h1 class="example-app-name">Financial Services</h1></span>
+      
+      <span class="example-fill-remaining-space"></span>
+
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li fxHide.xs>
+            <button mat-icon-button>
+              <mat-icon>settings</mat-icon>
+            </button>
+          </li>
+  
+          <li fxHide.xs>
+            <button mat-icon-button>
+              <mat-icon>help_outline</mat-icon>
+            </button>
+          </li>
+  
+          <li>
+            <button mat-icon-button [matMenuTriggerFor]="auth">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #auth="matMenu">
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sign out</span>
+              </button>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+
+    </mat-toolbar-row>
+    
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container"

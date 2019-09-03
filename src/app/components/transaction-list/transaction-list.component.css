@@ -1,3 +1,5 @@
+@import "./../../../variables.scss";
+
 .transactionlist-content {
   padding: 0px;
   margin: 2em;
@@ -51,6 +53,11 @@ mat-header-cell:nth-child(7) {
   display: none;
   padding: 0;
 }
+
+.header-row {
+  background: $table-header-color:
+}
+
 @media (max-width: 600px) {
   .mobile-label {
     width: 70px;
