@@ -8,5 +8,4 @@ export class Transaction {
     taxAmount: number;
     dueDate: number;
     amountPaid: number;
-
 }

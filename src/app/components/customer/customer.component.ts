@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CustomerService } from './../../services/customer.service';
 import { Customer } from './../../models/customer';
-import { MatTableDataSource, MatTable } from '@angular/material';
+import { MatTableDataSource, MatTable, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-customer',
@@ -10,11 +10,12 @@ import { MatTableDataSource, MatTable } from '@angular/material';
 })
 
 
-export class CustomerComponent implements OnInit {
-  displayedColumns = ['customerId', 'fullName', 'phone', 'email', 'options'];
-  dataSource: MatTableDataSource<Customer>;
+export class CustomerComponent implements OnInit, AfterViewInit {
+  displayedColumns = ['id', 'lastName', 'phone', 'email', 'options'];
+  dataSource = new MatTableDataSource<Customer>();
   customers: Customer[] = [];
 
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(
     private customerService: CustomerService,
@@ -24,12 +25,8 @@ export class CustomerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCustomers();
-  }
-
-  getCustomers(): void {
     this.customerService.getCustomers().subscribe(customers => {
-      customers = customers;
+      this.customers = customers;
       if (customers) {
          this.dataSource = new MatTableDataSource(customers);
          console.log(this.dataSource);
@@ -37,15 +34,30 @@ export class CustomerComponent implements OnInit {
      });
   }
 
+  ngAfterViewInit(): void {
+    this.getCustomers();
+  }
+
+  getCustomers(): void {
+    this.customerService.getCustomers()
+        .subscribe(customers => {
+          customers = customers;
+          this.dataSource.data = this.customers;
+          this.dataSource.sort = this.sort;
+         });
+  }
+
   delete(customer: Customer): void {
     this.customers = this.customers.filter(h => h !== customer);
     this.customerService.deleteCustomer(customer).subscribe();
-    this.refresh();
+    this.getCustomers();
+    // this.refresh();
    }
 
    refresh() {
     this.customerService.getCustomers().subscribe(customers => {
       this.dataSource.data = customers;
+      this.dataSource.sort = this.sort;
     });
     this.changeDetectorRefs.detectChanges();
   }
