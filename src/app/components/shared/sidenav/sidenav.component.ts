@@ -33,9 +33,11 @@ export class SidenavComponent implements OnInit, OnDestroy {
       this.mobileQuery.removeListener(this._mobileQueryListener);
     }
 
-
-
     ngOnInit() {
+    }
+
+    logout() {
+      alert('logged out!');
     }
 
 }

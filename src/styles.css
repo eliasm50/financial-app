@@ -1,4 +1,7 @@
 @import url(~@angular/material/prebuilt-themes/indigo-pink.css);
+.mat-sort-header-arrow {
+  color: black;
+}
 html,
 body {
   margin: 0;

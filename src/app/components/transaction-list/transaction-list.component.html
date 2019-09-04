@@ -3,7 +3,7 @@
 
   <div class="example-container mat-elevation-z8">
 
-    <mat-table [dataSource]="dataSource" matSort>
+    <mat-table [dataSource]="dataSource" matSort matSortStart="desc">
 
       <!-- ID Column -->
       <ng-container matColumnDef="transactionId">
@@ -62,7 +62,7 @@
       <ng-container matColumnDef="amountPaid">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Amount Paid </mat-header-cell>
         <mat-cell *matCellDef="let row" class="amountPaid"><span class="mobile-label">Amount Paid:</span>{{row.amountPaid  | currency}} </mat-cell>
-      </ng-container>         
+      </ng-container>                
 
       <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-table-header"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;">

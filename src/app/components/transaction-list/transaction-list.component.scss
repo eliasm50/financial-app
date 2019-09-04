@@ -37,19 +37,22 @@
 
 .mat-icon-button {
     width: auto;    
-  }    
-
-  .mat-header-cell {
-    background: $table-header-color;
+  }
+  
+.mat-header-cell {
+    background: $table-header-color!important;
     color:$main-color;
     justify-content: center;    
   }
 
-  .mat-table-header {
-    background: $table-header-color;
+.mat-table-header {    
     display:flex;
     justify-content:center;
-  }
+}
+
+.mat-sort-header-arrow {
+    color:$main-color
+}  
 
   .mat-cell {
     font-size: 14px;
@@ -59,10 +62,10 @@
     justify-content: center;
   }  
 
-mat-cell:nth-child(1),
-mat-header-cell:nth-child(1) {
-    flex: 0 0 10%;
-}
+  mat-cell:nth-child(1),
+  mat-header-cell:nth-child(1) {
+      flex: 0 0 10%;
+  }
 
 mat-cell:nth-child(2),
 mat-header-cell:nth-child(2) {
@@ -106,7 +109,7 @@ mat-header-cell:nth-child(7) {
     .mat-header-row {
       display: none;
       text-align: left;
-    }
+    }    
   
     .mat-row { 
       flex-direction: column;
@@ -117,7 +120,8 @@ mat-header-cell:nth-child(7) {
 
     .mat-cell {      
       border-style: none;
-      border-bottom: $table-header-color;                        
+      border-bottom: $table-header-color;
+      justify-content: left;                               
     }     
 
     mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {

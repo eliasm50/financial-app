@@ -3,10 +3,10 @@ export class Transaction {
     transactionType: string;
     customerId: string;
     description: string;
-    date: Date;
+    date: number;
     amount: number;
     taxAmount: number;
-    dueDate: Date;
+    dueDate: number;
     amountPaid: number;
 
 }

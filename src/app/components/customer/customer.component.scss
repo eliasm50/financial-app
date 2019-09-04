@@ -44,6 +44,14 @@
     color:$main-color;
     justify-content: center;    
   }
+
+  .mat-table-header {
+    background: $table-header-color;
+    display:flex;
+    justify-content:center;
+  }
+
+ 
   .mat-cell {
     font-size: 14px;
     min-height: 35px;
@@ -76,9 +84,14 @@
       padding: 8px 24px; 
     }
 
+    .mat-header-cell {     
+      justify-content: left;    
+    }
+
     .mat-cell {      
       border-style: none;
-      border-bottom: $table-header-color;            
+      border-bottom: $table-header-color;
+      justify-content: left;              
     }    
 
     mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {

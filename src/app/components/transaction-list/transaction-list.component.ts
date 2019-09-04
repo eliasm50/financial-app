@@ -8,11 +8,13 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
   templateUrl: './transaction-list.component.html',
   styleUrls: ['./transaction-list.component.scss']
 })
-export class TransactionListComponent implements OnInit {
-  displayedColumns = ['transactionId', 'transactionType', 
+export class TransactionListComponent implements OnInit, AfterViewInit {
+  displayedColumns = ['transactionId', 'transactionType',
                       'customerId', 'date', 'amount', 'taxAmount', 'dueDate', 'amountPaid'];
-  dataSource: MatTableDataSource<Transaction>;
+  dataSource = new MatTableDataSource<Transaction>();
   transactions: Transaction[] = [];
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(
     private transactionService: TransactionService
@@ -30,9 +32,17 @@ export class TransactionListComponent implements OnInit {
      });
   }
 
+  ngAfterViewInit(): void {
+    this.getTransactions();
+  }
+
   getTransactions(): void {
     this.transactionService.getTransactions()
-        .subscribe(transactions => transactions = transactions);
+        .subscribe(transactions => {
+          transactions = transactions;
+          this.dataSource.data = this.transactions;
+          this.dataSource.sort = this.sort;
+         });
   }
 
 }
