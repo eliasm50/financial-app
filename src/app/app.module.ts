@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
 import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+import 'hammerjs';
 
 
 @NgModule({
