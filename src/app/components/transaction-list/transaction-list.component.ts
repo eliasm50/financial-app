@@ -15,6 +15,7 @@ export class TransactionListComponent implements OnInit, AfterViewInit {
   transactions: Transaction[] = [];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(
     private transactionService: TransactionService
@@ -42,6 +43,7 @@ export class TransactionListComponent implements OnInit, AfterViewInit {
           transactions = transactions;
           this.dataSource.data = this.transactions;
           this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
          });
   }
 
