@@ -6,7 +6,7 @@
 
 .transactionlist-content {
     padding: 0px;
-    margin: 2em;       
+    margin: 0em 2em 2em 2em;       
 }
 
 .transactionlist-content h3 {
@@ -62,30 +62,6 @@
     justify-content: center;
   }
 
-  mat-cell:nth-child(1),
-  mat-header-cell:nth-child(1) {
-      flex: 0 0 10%;
-  }
-
-mat-cell:nth-child(2),
-mat-header-cell:nth-child(2) {
-    flex: 0 0 10%;
-}
-
-mat-cell:nth-child(3),
-mat-header-cell:nth-child(3) {
-    flex: 0 0 20%;
-}
-
-mat-cell:nth-child(4),
-mat-header-cell:nth-child(4) {
-  flex: 0 0 12%;  
-}
-
-mat-cell:nth-child(7),
-mat-header-cell:nth-child(7) {
-  flex: 0 0 12%;
-}
 
 /* Search fields */
 ::ng-deep .mat-form-field {
