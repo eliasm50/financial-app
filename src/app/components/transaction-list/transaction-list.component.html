@@ -1,7 +1,10 @@
 <div class="transactionlist-content">
   <div style="display: flex; justify-content: space-between;">
   <h3>Transactions</h3>
-  <div class="example-header">
+  <div style="display: flex; justify-content: space-between;">
+    <div class="filter-icon">
+      <mat-icon>search</mat-icon>
+    </div>
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>

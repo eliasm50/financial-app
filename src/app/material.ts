@@ -11,11 +11,11 @@ import { MatTableModule } from '@angular/material';
 
 @NgModule({
     imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule,
-        MatSidenavModule, MatIconModule, MatListModule, MatTableModule, 
-        MatGridListModule, MatSortModule, MatPaginatorModule,MatFormFieldModule, MatInputModule],
+        MatSidenavModule, MatIconModule, MatListModule, MatTableModule,
+        MatGridListModule, MatSortModule, MatPaginatorModule, MatFormFieldModule, MatInputModule],
     exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule,
         MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatGridListModule,
-        MatSortModule, MatPaginatorModule,MatFormFieldModule, MatInputModule]
+        MatSortModule, MatPaginatorModule, MatFormFieldModule, MatInputModule]
 })
 
 export class MaterialModule { }
