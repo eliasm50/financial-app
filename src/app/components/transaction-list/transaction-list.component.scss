@@ -168,5 +168,12 @@ mat-header-cell:nth-child(7) {
     
     mat-footer-row::after, mat-header-row::after, mat-row::after {
       min-height: 20px;            
-    }  
+    }
+
+    ::ng-deep .mat-form-field {
+      .mat-form-field-infix {
+        width: 120px;
+      }
+    }
+    
 }
